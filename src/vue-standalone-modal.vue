@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <dialog v-show="visible" :open="visible">
-      <button class="close-button" @click="close()">
+      <button v-if="showCloseButton" class="close-button" @click="close()">
         <svg
           width="24"
           height="24"
@@ -15,7 +15,7 @@
           />
         </svg>
       </button>
-      <div v-if="withCard">
+      <div v-if="withCard" :style="innerStyle" :class="innerClass">
         <component :is="component" v-bind="props" v-on="events"/>
       </div>
       <component v-else :is="component" v-bind="props" v-on="events"/>
@@ -33,13 +33,14 @@ export default Vue.extend({
       type: Boolean,
       default: true,
     },
-    borderRadius: {
-      type: [Number, String],
-      default: 25
+    innerStyle: {
+      type: Object,
+      default: () => ({}),
     },
-    background: {
-      type: String,
-      default: '#ffffff'
+    innerClass: [Object, Function, String, Array],
+    showCloseButton: {
+      type: Boolean,
+      default: true
     },
     component: [Object, Function, String],
     props: [Object],
