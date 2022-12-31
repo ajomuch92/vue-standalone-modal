@@ -1,17 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Example</h1>
+    <button @click="showModal()">Show Modal</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MyModal from './MyModal.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  methods: {
+    showModal() {
+      this.$showModal({
+        parent: this,
+        component: MyModal,
+        props: {
+          message: 'Hello World',
+        },
+        events: {
+          'my-click-event': (message) => {
+            console.log(message);
+          }
+        }
+      });
+    }
   }
 }
 </script>
