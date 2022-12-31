@@ -17,7 +17,7 @@ Install vue-standalone-modal with NPM
 And use it into your main file
 
 ```javascript
-import Vuefrom 'vue';
+import Vue from 'vue';
 
 import VueStandAloneModal from 'vue-standalone-modal';
 
@@ -82,7 +82,9 @@ export default {
 </script>
 ```
 
-And avoiding to use your custom modal component into the template.
+And avoiding to use your custom modal component into the template. See a full example [here](https://github.com/ajomuch92/vue-standalone-modal/tree/main/example)
+
+**IT'S COMPATIBLE WITH ALL LIBRARIES AND COMPONENTS FOR VueJS v2**
 
 
 ## Author
