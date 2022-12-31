@@ -1,8 +1,7 @@
 {
   "name": "vue-standalone-modal",
   "version": "1.0.0",
-  "description": "",
-
+  "description": "Project to inject component instead to put into template section",
   "main": "dist/vue-standalone-modal.ssr.js",
   "browser": "dist/vue-standalone-modal.esm.js",
   "module": "dist/vue-standalone-modal.esm.js",
