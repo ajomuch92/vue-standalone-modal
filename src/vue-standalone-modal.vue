@@ -1,7 +1,14 @@
 <template>
   <transition name="fade">
-    <dialog v-show="visible" :open="visible">
-      <button v-if="showCloseButton" class="close-button" @click="close()">
+    <dialog
+      v-show="visible"
+      :open="visible"
+    >
+      <button
+        v-if="showCloseButton"
+        class="close-button"
+        @click="close()"
+      >
         <svg
           width="24"
           height="24"
@@ -15,10 +22,23 @@
           />
         </svg>
       </button>
-      <div v-if="withCard" :style="innerStyle" :class="innerClass">
-        <component :is="component" v-bind="props" v-on="events"/>
+      <div
+        v-if="withCard"
+        :style="innerStyle"
+        :class="innerClass"
+      >
+        <component
+          :is="component"
+          v-bind="props"
+          v-on="events"
+        />
       </div>
-      <component v-else :is="component" v-bind="props" v-on="events"/>
+      <component
+        :is="component"
+        v-else
+        v-bind="props"
+        v-on="events"
+      />
     </dialog>
   </transition>
 </template>
@@ -37,14 +57,27 @@ export default Vue.extend({
       type: Object,
       default: () => ({}),
     },
-    innerClass: [Object, Function, String, Array],
+    innerClass: {
+      type: [Object, Function, String, Array],
+      default: '',
+    },
     showCloseButton: {
       type: Boolean,
       default: true
     },
-    component: [Object, Function, String],
-    props: [Object],
-    events: [Object],
+    component: {
+      type: [Object, Function, String],
+      required: true,
+      default: () => ({})
+    },
+    props: {
+      type: Object,
+      default: () => ({})
+    },
+    events: {
+      type: Object,
+      default: () => ({})
+    },
   },
   data: () => ({
     visible: false,

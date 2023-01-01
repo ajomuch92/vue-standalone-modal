@@ -1,0 +1,3 @@
+dist/*.js
+dev/*.js
+example/*.js
