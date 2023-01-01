@@ -25,7 +25,7 @@ Vue.use(VueStandAloneModal);
 ```
 ## Example
 
-When you want to use a component as modal, you usually do something this:
+When you want to use a component as modal, you usually do something like this:
 
 ```html
 <template>
